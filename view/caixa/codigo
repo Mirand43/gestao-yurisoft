@@ -1,0 +1,8 @@
+SELECT c.*, p.nome as descricao from carrinho c, produto p, stock s WHERE p.idproduto = s.idproduto and c.idstock = s.idstock;
+
+todos carrinhos
+
+
+para fatura
+
+SELECT c.*, p.nome as descricao from carrinho c, produto p, stock s WHERE p.idproduto = s.idproduto and c.idstock = s.idstock and c.idvenda=(SELECT MAX(v.idvenda) from venda v);
